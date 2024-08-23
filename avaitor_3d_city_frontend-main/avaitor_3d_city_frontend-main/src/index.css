@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brandBg: #292828;
+  --brandBorder: #9196a5;
+  --cardBg: #443135;
+}
+body {
+  background-color: var(--brandBg);
+  min-height: 100vh;
+  position: absolute;
+}
+.game {
+  display: flex;
+  justify-content: center;
+}
+.canvas-game {
+  width: 610px;
+  margin: 3rem auto;
+  border: solid #9196a5 1px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 0;
+}
+input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+.game-section {
+  display: flex;
+  width: 100%;
+  /* background-color: aqua; */
+  justify-content: space-around;
+}
+
+/* responsive */
+
+/* Media Query for small devices (mobiles and small tablets) */
+@media (max-width: 1028px) {
+  .game-section {
+    flex-direction: column; /* Stack components vertically */
+    width: 100%;
+  }
+
+  .deshboard-section {
+    order: 2; /* Moves left-components below right-content */
+    flex-basis: 100%;
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .game {
+    order: 1; /* Moves right-content above left-components */
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
