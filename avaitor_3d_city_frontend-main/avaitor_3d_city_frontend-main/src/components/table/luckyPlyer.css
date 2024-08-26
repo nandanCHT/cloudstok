@@ -1,0 +1,40 @@
+.lucky-plyer-main {
+  width: 100%;
+  background-color: #443135;
+  border: 1px solid #9196a5;
+  /* color: white; */
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-right: 5rem;
+}
+
+.lucky-plyerUpper {
+  padding: 4px;
+  display: flex;
+  gap: 6px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  /* background-color: #443135; */
+  /* border: 1px solid #9196a5; */
+  /* border-radius: 8px; */
+  /* border-radius: 15px; */
+  /* padding: 4%; */
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  /* color: white; */
+  /* font-size: 12px; */
+  background-color: #ad9da04f;
+}
+td {
+  /* color: white; */
+  padding: 8px;
+}

@@ -1,0 +1,15 @@
+.main-gameRule {
+  width: "100%";
+  /* padding: auto; */
+}
+.text-gameRule {
+  padding: 8px;
+  color: white;
+}
+
+.rules-card {
+  border: 1px solid #9196a5;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}

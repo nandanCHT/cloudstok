@@ -1,8 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Deshboard_1.css";
-import { FaMinus } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Dash = () => {
+  const [isNextBet, setIsNextBet] = useState(true);
+  const [show, setShow] = useState(false);
+  const [isAutoBet1, setIsAutoBet1] = useState(false);
+  const [isAutoBet2, setIsAutoBet2] = useState(false);
+  const [activeSwitch, setActiveSwitch] = useState(null);
+
+  const handleNextBetClick = () => {
+    setIsNextBet(!isNextBet);
+    setShow(!show);
+  };
+
+  const handleAutoBetToggle = (switchNumber) => {
+    if (activeSwitch === switchNumber) {
+      setActiveSwitch(null);
+      toast.info(`Auto Bet ${switchNumber} is OFF`, {
+        position: "top-center",
+        autoClose: 100,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        icon: false,
+        closeButton: false,
+        style: { backgroundColor: "yellow", color: "black" },
+      });
+    } else {
+      setActiveSwitch(switchNumber);
+      toast.info(`Auto Bet ${switchNumber} is ON!`, {
+        position: "top-center",
+        autoClose: 100,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        icon: false,
+        closeButton: false,
+        style: { backgroundColor: "green", color: "black" },
+      });
+    }
+  };
+
   return (
     <div>
       <div className="brdiv">
@@ -20,36 +65,35 @@ const Dash = () => {
         <div className="other-bt">
           <div className="btn">
             <button className="button-fp">
-              <span class="text-base">
+              <span className="text-base">
                 <FaPlus />
               </span>
-              <span class="text-base1"> 100</span>
+              <span className="text-base1"> 100</span>
             </button>
 
             <button className="button-fp">
-              <span class="text-base">
+              <span className="text-base">
                 <FaPlus />
               </span>
-              <span class="text-base1"> 500</span>
+              <span className="text-base1"> 500</span>
             </button>
 
             <button className="button-fp">
-              <span class="text-base">
+              <span className="text-base">
                 <FaPlus />
               </span>
-              <span class="text-base1"> 1000</span>
+              <span className="text-base1"> 1000</span>
             </button>
 
             <button className="button-fp">
-              <span class="text-base">
+              <span className="text-base">
                 <FaPlus />
               </span>
 
-              <span class="text-base1"> 2000</span>
+              <span className="text-base1"> 2000</span>
             </button>
           </div>
         </div>
-
         {/* max reset and logo button */}
         <div className="mrl-button">
           <button
@@ -91,41 +135,65 @@ const Dash = () => {
             </svg>
           </div>
         </div>
-
         {/* submit button  */}
-        <div
-          style={{
-            width: "100%",
-            margin: "13px 0px 13px 0px",
-            display: "flex",
-          }}
-        >
-          <button className="submit-button" type="button">
-            <span> Next Bet </span>
+        <div style={{ width: "100%", margin: "13px 0px", display: "flex" }}>
+          <button
+            className={`submit-button ${!isNextBet ? "cancel-button" : ""}`}
+            type="button"
+            onClick={handleNextBetClick}
+          >
+            <span>{isNextBet ? "Next Bet" : "Cancel Bet"}</span>
           </button>
         </div>
-
-        {/* doganbutton */}
+        {show && (
+          <div
+            style={{
+              color: "white",
+              fontWeight: "600",
+              fontSize: "16px",
+              padding: "10px",
+              background: "gray",
+              borderRadius: "16px",
+              marginBottom: "8px",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            Waiting For Next Round
+          </div>
+        )}
+        {/* Conditionally render "hii" div */}
+        {/* toggle file*/}
         <div className="doganbutton-main">
           <div className="doganbutton-slid" style={{ display: "flex" }}>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={activeSwitch === 1}
+                onChange={() => handleAutoBetToggle(1)}
+              />
+              <span className="slider round"></span>
             </label>
-            <p>Auto Bet</p>
+            <p>Auto Bet 1</p>
           </div>
+          {/* au */}
           <div
             className="doganbutton-slid"
             style={{ display: "flex", flexDirection: "row" }}
           >
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={activeSwitch === 2}
+                onChange={() => handleAutoBetToggle(2)}
+              />
+              <span className="slider round"></span>
             </label>
-            <p>Auto Bet</p>
+            <p>Auto Bet 2</p>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
