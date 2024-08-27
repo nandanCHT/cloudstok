@@ -113,7 +113,7 @@ button {
   /* align-items: center; */
 }
 .text-base1 {
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 700;
 }
 .button-fp {
@@ -187,6 +187,38 @@ button {
 .submit-button:focus {
   outline: none; /* Remove default focus outline */
   /* box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); Add custom focus ring */
+}
+/* Add this CSS to your stylesheet */
+.popup {
+  visibility: hidden;
+  min-width: 250px;
+  /* background-color: yellow; */
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#autoCashPopupOn {
+  top: 20px;
+  background-color: #22c55e;
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 15s; */
+}
+
+#autoCashPopupOff {
+  top: 60px; /* Positioned below the 'on' popup */
+  background-color: orange;
 }
 
 .switch {
@@ -268,6 +300,7 @@ input:checked + .slider:before {
   /* flex-direction: column; */
   font-size: 1rem;
   font-weight: 700;
+  position: relative;
   color: white;
 }
 
@@ -291,6 +324,30 @@ input:checked + .slider:before {
   display: flex;
   /* position: relative; */
   justify-content: space-between;
+}
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* responsive */

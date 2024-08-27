@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "./Deshboard_1.css";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import RangeInfo from "../components/RangeAuto2/RangeInfo";
 
-const Dash = () => {
+const Dash = (props) => {
   const [isNextBet, setIsNextBet] = useState(true);
   const [show, setShow] = useState(false);
-  const [isAutoBet1, setIsAutoBet1] = useState(false);
-  const [isAutoBet2, setIsAutoBet2] = useState(false);
-  const [activeSwitch, setActiveSwitch] = useState(null);
+  const [autoCash, setAutoCash] = useState(false);
+  const [autoCashOne, setAutoCashOne] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   const handleNextBetClick = () => {
     setIsNextBet(!isNextBet);
@@ -17,35 +16,30 @@ const Dash = () => {
   };
 
   const handleAutoBetToggle = (switchNumber) => {
-    if (activeSwitch === switchNumber) {
-      setActiveSwitch(null);
-      toast.info(`Auto Bet ${switchNumber} is OFF`, {
-        position: "top-center",
-        autoClose: 100,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        icon: false,
-        closeButton: false,
-        style: { backgroundColor: "yellow", color: "black" },
-      });
-    } else {
-      setActiveSwitch(switchNumber);
-      toast.info(`Auto Bet ${switchNumber} is ON!`, {
-        position: "top-center",
-        autoClose: 100,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        icon: false,
-        closeButton: false,
-        style: { backgroundColor: "green", color: "black" },
-      });
+    if (switchNumber === 1) {
+      const newAutoCash = !autoCash;
+      setAutoCash(newAutoCash);
+      setPopupMessage(newAutoCash ? "Auto Bet 1 is on" : "Auto Bet 1 is off");
+      showPopup();
     }
+
+    if (switchNumber === 2) {
+      const newAutoCashOne = !autoCashOne;
+      setAutoCashOne(newAutoCashOne);
+      setPopupMessage(
+        newAutoCashOne ? "Auto Bet 2 is on" : "Auto Bet 2 is off"
+      );
+      showPopup();
+    }
+  };
+
+  const showPopup = () => {
+    const popup = document.getElementById("autoCashPopup");
+    popup.classList.add("show");
+
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 3000);
   };
 
   return (
@@ -64,53 +58,26 @@ const Dash = () => {
         </div>
         <div className="other-bt">
           <div className="btn">
-            <button className="button-fp">
-              <span className="text-base">
-                <FaPlus />
-              </span>
-              <span className="text-base1"> 100</span>
-            </button>
-
-            <button className="button-fp">
-              <span className="text-base">
-                <FaPlus />
-              </span>
-              <span className="text-base1"> 500</span>
-            </button>
-
-            <button className="button-fp">
-              <span className="text-base">
-                <FaPlus />
-              </span>
-              <span className="text-base1"> 1000</span>
-            </button>
-
-            <button className="button-fp">
-              <span className="text-base">
-                <FaPlus />
-              </span>
-
-              <span className="text-base1"> 2000</span>
-            </button>
+            {[100, 500, 1000, 2000].map((value) => (
+              <button className="button-fp" key={value}>
+                <span className="text-base">
+                  <FaPlus />
+                </span>
+                <span className="text-base1"> {value}</span>
+              </button>
+            ))}
           </div>
         </div>
-        {/* max reset and logo button */}
         <div className="mrl-button">
           <button
             className="btn-m"
-            style={{
-              borderColor: "#22c55e",
-              color: "#22c55e",
-            }}
+            style={{ borderColor: "#22c55e", color: "#22c55e" }}
           >
             Max
           </button>
           <button
             className="btn-m"
-            style={{
-              borderColor: "#f97316",
-              color: "#f97316",
-            }}
+            style={{ borderColor: "#f97316", color: "#f97316" }}
           >
             Reset
           </button>
@@ -123,11 +90,11 @@ const Dash = () => {
               width="25"
               height="25"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="#ffffff"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
@@ -135,7 +102,6 @@ const Dash = () => {
             </svg>
           </div>
         </div>
-        {/* submit button  */}
         <div style={{ width: "100%", margin: "13px 0px", display: "flex" }}>
           <button
             className={`submit-button ${!isNextBet ? "cancel-button" : ""}`}
@@ -162,21 +128,18 @@ const Dash = () => {
             Waiting For Next Round
           </div>
         )}
-        {/* Conditionally render "hii" div */}
-        {/* toggle file*/}
         <div className="doganbutton-main">
           <div className="doganbutton-slid" style={{ display: "flex" }}>
             <label className="switch">
               <input
                 type="checkbox"
-                checked={activeSwitch === 1}
+                checked={autoCash}
                 onChange={() => handleAutoBetToggle(1)}
               />
               <span className="slider round"></span>
             </label>
             <p>Auto Bet 1</p>
           </div>
-          {/* au */}
           <div
             className="doganbutton-slid"
             style={{ display: "flex", flexDirection: "row" }}
@@ -184,16 +147,19 @@ const Dash = () => {
             <label className="switch">
               <input
                 type="checkbox"
-                checked={activeSwitch === 2}
+                checked={autoCashOne}
                 onChange={() => handleAutoBetToggle(2)}
               />
               <span className="slider round"></span>
             </label>
             <p>Auto Bet 2</p>
           </div>
+          {autoCashOne && <RangeInfo />}
         </div>
       </div>
-      <ToastContainer />
+      <div id="autoCashPopup" className="popup">
+        {popupMessage}
+      </div>
     </div>
   );
 };
