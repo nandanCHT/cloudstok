@@ -45,6 +45,26 @@ const App = () => {
       Contact: "74673637",
       Country: "india",
     },
+    {
+      Company: "nandan",
+      Contact: "74673637",
+      Country: "india",
+    },
+    {
+      Company: "nandan",
+      Contact: "74673637",
+      Country: "india",
+    },
+    {
+      Company: "nandan",
+      Contact: "74673637",
+      Country: "india",
+    },
+    {
+      Company: "nandan",
+      Contact: "74673637",
+      Country: "india",
+    },
   ];
 
   return (

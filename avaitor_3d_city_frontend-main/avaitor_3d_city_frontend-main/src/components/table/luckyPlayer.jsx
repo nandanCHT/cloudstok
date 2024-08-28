@@ -21,17 +21,21 @@ const LuckyPlayer = ({ data }) => {
             <th>X</th>
             <th>WIN</th>
           </tr>
-          {data?.map((itme, index) => {
-            return (
-              <>
-                <tr key={index}>
-                  <td>{itme?.Company}</td>
-                  <td>{itme?.Contact}</td>
-                  <td>{itme?.Country}</td>
-                </tr>
-              </>
-            );
-          })}
+          <div className="scrollable-main">
+            <div className="scrollable-content">
+              {data?.map((itme, index) => {
+                return (
+                  <>
+                    <tr key={index}>
+                      <td>{itme?.Company}</td>
+                      <td>{itme?.Contact}</td>
+                      <td>{itme?.Country}</td>
+                    </tr>
+                  </>
+                );
+              })}
+            </div>
+          </div>
         </table>
       </div>
     </div>

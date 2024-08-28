@@ -31,25 +31,26 @@
 .num {
   color: rgb(248 250 252);
 }
-.button-section {
+/* .button-section {
   display: flex;
-}
+} */
 .bt {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
   width: 100%;
+
   /* margin-left: 1rem; */
   border-radius: 16px;
   margin-bottom: 1rem;
-  width: 100%;
+  /* width: 100%; */
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   padding: 0.5rem;
   border: 1px solid #9196a5;
   font-weight: 600;
@@ -64,7 +65,22 @@
   /* border: #0056b3 solid 1px; */
 }
 
-button {
+.bt button {
+  background-color: #0f172a33;
+  color: white;
+  border: none;
+}
+/* button:hover {
+  background-color: #292828;
+} */
+
+.btn {
+  width: 100%;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.btn button {
   position: relative;
   /* background-color: #fa082433; */
   justify-content: space-between;
@@ -85,16 +101,6 @@ button {
   border: 1px solid #9196a5;
   font-weight: 200;
   background-color: #0f172a33;
-}
-/* button:hover {
-  background-color: #292828;
-} */
-
-.btn {
-  width: 100%;
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .btn :focus {
   outline: none; /* Remove default focus outline */
@@ -132,6 +138,28 @@ button {
   /* background-color: #0f172a33; */
   justify-content: space-between;
   /* margin-bottom: 1rem; */
+}
+.mrl-button button {
+  position: relative;
+  /* background-color: #fa082433; */
+  justify-content: space-between;
+  margin-right: 10px;
+  width: 100%;
+  /* margin-left: 1rem; */
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  /* width: 45%; */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.5rem;
+  cursor: pointer;
+  /* border-radius: 16px; */
+  padding: 0.5rem;
+  border: 1px solid #9196a5;
+  font-weight: 200;
+  background-color: #0f172a33;
 }
 .mrl-button :hover {
   /* background-color: #00b395; Darker shade on hover */
@@ -326,6 +354,18 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
+.range-slider {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.range-slider input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
 /* Popup styling */
 .popup {
   position: fixed;
@@ -348,6 +388,11 @@ input:checked + .slider:before {
 .popup.show {
   opacity: 1;
   visibility: visible;
+}
+
+.range-slider p {
+  margin-top: 0.5rem;
+  color: white;
 }
 
 /* responsive */

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Deshboard_1.css";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import RangeInfo from "../components/RangeAuto2/RangeInfo";
+import Main_button from "./buttonDesh/Main_button";
 
 const Dash = (props) => {
   const [isNextBet, setIsNextBet] = useState(true);
@@ -46,28 +47,9 @@ const Dash = (props) => {
     <div>
       <div className="brdiv">
         <div className="button-section">
-          <div className="bt">
-            <p>
-              <FaMinus />
-            </p>
-            <p>100</p>
-            <p>
-              <FaPlus />
-            </p>
-          </div>
+          <Main_button />
         </div>
-        <div className="other-bt">
-          <div className="btn">
-            {[100, 500, 1000, 2000].map((value) => (
-              <button className="button-fp" key={value}>
-                <span className="text-base">
-                  <FaPlus />
-                </span>
-                <span className="text-base1"> {value}</span>
-              </button>
-            ))}
-          </div>
-        </div>
+
         <div className="mrl-button">
           <button
             className="btn-m"

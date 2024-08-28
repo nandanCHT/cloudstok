@@ -1,0 +1,60 @@
+.button-section {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* margin: 20px 0; */
+  width: 100%;
+}
+
+/* .bt {
+  display: flex;
+  align-items: center;
+} */
+/* 
+button {
+  
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+} */
+
+/* button:hover {
+  background-color: #45a049;  
+} */
+
+.minus-button {
+  background-color: #f44336; /* Red background */
+}
+
+.minus-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+
+.plus-button {
+  background-color: #4caf50; /* Green background */
+}
+
+.plus-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+.value-input {
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  /* border: 1px solid #ccc; */
+  border: none;
+  padding: 5px;
+  margin: 0 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #0f172a33;
+  color: white;
+}

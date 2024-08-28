@@ -89,7 +89,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 677px) {
+@media (max-width: 700px) {
   .game-section {
     flex-direction: column;
     width: 100%;
@@ -145,7 +145,7 @@ body {
   }
 }
 
-@media (min-width: 679px) {
+@media (min-width: 700px) {
   .tab-container {
     display: none !important;
   }
