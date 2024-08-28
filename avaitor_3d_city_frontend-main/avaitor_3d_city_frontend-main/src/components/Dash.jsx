@@ -3,6 +3,8 @@ import "./Deshboard_1.css";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import RangeInfo from "../components/RangeAuto2/RangeInfo";
 import Main_button from "./buttonDesh/Main_button";
+import { image } from "../assets/image";
+import MaxReset from "./MaxResetEdit/MaxReset";
 
 const Dash = (props) => {
   const [isNextBet, setIsNextBet] = useState(true);
@@ -49,41 +51,9 @@ const Dash = (props) => {
         <div className="button-section">
           <Main_button />
         </div>
+        {/* MaxRest */}
+        <MaxReset />
 
-        <div className="mrl-button">
-          <button
-            className="btn-m"
-            style={{ borderColor: "#22c55e", color: "#22c55e" }}
-          >
-            Max
-          </button>
-          <button
-            className="btn-m"
-            style={{ borderColor: "#f97316", color: "#f97316" }}
-          >
-            Reset
-          </button>
-          <div
-            className="svg-logo"
-            style={{ background: "#64748b", padding: "10px" }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="#ffffff"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-              <path d="M13.5 6.5l4 4"></path>
-            </svg>
-          </div>
-        </div>
         <div style={{ width: "100%", margin: "13px 0px", display: "flex" }}>
           <button
             className={`submit-button ${!isNextBet ? "cancel-button" : ""}`}

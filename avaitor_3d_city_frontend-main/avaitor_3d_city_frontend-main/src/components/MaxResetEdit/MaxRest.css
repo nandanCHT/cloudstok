@@ -1,0 +1,66 @@
+.mrl-main {
+  /* margin-left: 1rem; */
+
+  /* background-color: aqua; */
+}
+
+.mrl-button {
+  width: 100%;
+  display: flex;
+  position: relative;
+  /* background-color: #0f172a33; */
+  justify-content: space-between;
+  /* margin-bottom: 1rem; */
+  /* background-color: aqua; */
+}
+.mrl-button button {
+  position: relative;
+  /* background-color: #fa082433; */
+  justify-content: space-between;
+  margin-right: 10px;
+  width: 100%;
+  /* margin-left: 1rem; */
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  /* width: 45%; */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.5rem;
+  cursor: pointer;
+  /* border-radius: 16px; */
+  padding: 0.5rem;
+  border: 1px solid #9196a5;
+  font-weight: 200;
+  background-color: #0f172a33;
+}
+.mrl-button :hover {
+  /* background-color: #00b395; */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.mrl-button:focus {
+  outline: none; /* Remove default focus outline */
+  /* box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); Add custom focus ring */
+}
+
+.btn-m {
+  width: "100px";
+  /* padding: "11px"; */
+  height: 41px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.btn-m button {
+  font-size: 4px;
+  font-weight: 1rem;
+}
+.fontEdit {
+  background: #64748b;
+  padding: 10px;
+  border: 1px solid #9196a5;
+  border-radius: 7px;
+}
