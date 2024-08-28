@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Main_button.css";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import "../Deshboard_1.css";
 
-const Main_button = () => {
-  const [value, setValue] = useState(100); // Initial value of the input
+const Main_button = ({ betValue }) => {
+  const [value, setValue] = useState(betValue); // Initialize state with betValue
   const buttonValues = [100, 500, 1000, 2000]; // Values of the buttons
+
+  useEffect(() => {
+    setValue(betValue); // Update state whenever betValue prop changes
+  }, [betValue]);
 
   const handleMinusClick = () => {
     setValue((prevValue) => Math.max(100, prevValue - 50)); // Decrease value by 50 but not below 100

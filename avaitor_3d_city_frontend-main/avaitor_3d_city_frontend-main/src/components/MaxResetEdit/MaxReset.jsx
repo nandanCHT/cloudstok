@@ -5,7 +5,7 @@ import "../Dash";
 import "../Deshboard_1";
 import { image } from "../../assets/image";
 
-const MaxReset = () => {
+const MaxReset = ({ onMax, onReset }) => {
   return (
     <div className="mrl-button">
       <button
@@ -16,6 +16,7 @@ const MaxReset = () => {
           fontSize: "1rem",
           fontWeight: "1rem",
         }}
+        onClick={onMax}
       >
         Max
       </button>
@@ -27,6 +28,7 @@ const MaxReset = () => {
           fontSize: "1rem",
           fontWeight: "1rem",
         }}
+        onClick={onReset}
       >
         Reset
       </button>

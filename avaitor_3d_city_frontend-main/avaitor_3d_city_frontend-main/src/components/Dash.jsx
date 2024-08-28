@@ -12,6 +12,7 @@ const Dash = (props) => {
   const [autoCash, setAutoCash] = useState(false);
   const [autoCashOne, setAutoCashOne] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
+  const [betValue, setBetValue] = useState(0); // State to track the bet value
 
   const handleNextBetClick = () => {
     setIsNextBet(!isNextBet);
@@ -45,14 +46,23 @@ const Dash = (props) => {
     }, 3000);
   };
 
+  const handleMax = () => {
+    setBetValue(34567); // Set bet value to the maximum, assuming 100 is the max value
+  };
+
+  const handleReset = () => {
+    setBetValue(0); // Reset bet value to 0
+  };
+
   return (
     <div>
       <div className="brdiv">
         <div className="button-section">
-          <Main_button />
+          <Main_button betValue={betValue} />{" "}
+          {/* Pass betValue to Main_button */}
         </div>
         {/* MaxRest */}
-        <MaxReset />
+        <MaxReset onMax={handleMax} onReset={handleReset} />
 
         <div style={{ width: "100%", margin: "13px 0px", display: "flex" }}>
           <button
