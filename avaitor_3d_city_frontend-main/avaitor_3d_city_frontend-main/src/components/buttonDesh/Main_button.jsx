@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Main_button.css";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import "../Deshboard_1.css";
+import { image } from "../../assets/image";
+import { FaPlus } from "react-icons/fa";
+import { GoPlus } from "react-icons/go";
+import { HiOutlineMinus } from "react-icons/hi";
 
 const Main_button = ({ betValue }) => {
   const [value, setValue] = useState(betValue); // Initialize state with betValue
@@ -44,7 +47,8 @@ const Main_button = ({ betValue }) => {
     <div className="button-section">
       <div className="bt">
         <button onClick={handleMinusClick} className="minus-button">
-          <FaMinus />
+          {/* <p>{image.minusIcon}</p> */}
+          <HiOutlineMinus />
         </button>
         <input
           type="text"
@@ -55,7 +59,8 @@ const Main_button = ({ betValue }) => {
           className="value-input"
         />
         <button onClick={handlePlusClick} className="plus-button">
-          <FaPlus />
+          {/* <p>{image.plusIcon}</p> */}
+          <GoPlus />
         </button>
       </div>
       <div className="other-bt">

@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  /* gap: 2px; */
 }
 
 :root {
@@ -80,6 +81,7 @@ body {
   width: 100%;
   justify-content: space-between;
   padding: 10px;
+  gap: 0.5rem;
 }
 
 .game-Rule {
@@ -89,7 +91,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 700px) {
+@media (max-width: 973px) {
   .game-section {
     flex-direction: column;
     width: 100%;

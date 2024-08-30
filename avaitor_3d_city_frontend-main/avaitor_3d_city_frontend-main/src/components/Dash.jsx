@@ -51,20 +51,20 @@ const Dash = (props) => {
   };
 
   const handleReset = () => {
-    setBetValue(0); // Reset bet value to 0
+    setBetValue(100); // Reset bet value to 0
   };
 
   return (
     <div>
       <div className="brdiv">
         <div className="button-section">
-          <Main_button betValue={betValue} />{" "}
+          <Main_button betValue={betValue} />
           {/* Pass betValue to Main_button */}
         </div>
         {/* MaxRest */}
         <MaxReset onMax={handleMax} onReset={handleReset} />
 
-        <div style={{ width: "100%", margin: "13px 0px", display: "flex" }}>
+        <div style={{ width: "100%", margin: "4px 0px", display: "flex" }}>
           <button
             className={`submit-button ${!isNextBet ? "cancel-button" : ""}`}
             type="button"
@@ -97,6 +97,7 @@ const Dash = (props) => {
                 type="checkbox"
                 checked={autoCash}
                 onChange={() => handleAutoBetToggle(1)}
+                className="Desh_Input"
               />
               <span className="slider round"></span>
             </label>

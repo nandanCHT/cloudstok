@@ -19,53 +19,53 @@ const App = () => {
   };
 
   // dummy data
-  const data = [
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-    {
-      Company: "nandan",
-      Contact: "74673637",
-      Country: "india",
-    },
-  ];
+  // const data = [
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  //   {
+  //     Company: "nandan",
+  //     Contact: "74673637",
+  //     Country: "india",
+  //   },
+  // ];
 
   return (
     <div className="flex-container">
@@ -80,6 +80,7 @@ const App = () => {
             <GameRule />
           </div>
         </div>
+
         <div className="deshboard-section">
           {/* Tab Navigation for Mobile/Tablet */}
           <div className="tab-container">
@@ -109,7 +110,7 @@ const App = () => {
               activeTab === "luckyPlayer" ? "active" : ""
             }`}
           >
-            <LuckyPlayer data={data} />
+            <LuckyPlayer />
           </div>
         </div>
       </div>

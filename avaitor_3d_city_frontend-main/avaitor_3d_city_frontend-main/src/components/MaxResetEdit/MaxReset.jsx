@@ -3,6 +3,7 @@ import "./MaxRest.css";
 import "../Deshboard_1.css";
 import "../Dash";
 import "../Deshboard_1";
+import "../buttonDesh/Main_button";
 import { image } from "../../assets/image";
 
 const MaxReset = ({ onMax, onReset }) => {
