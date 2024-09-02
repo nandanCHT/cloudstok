@@ -18,55 +18,6 @@ const App = () => {
     setActiveTab(tab);
   };
 
-  // dummy data
-  // const data = [
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  //   {
-  //     Company: "nandan",
-  //     Contact: "74673637",
-  //     Country: "india",
-  //   },
-  // ];
-
   return (
     <div className="flex-container">
       <div className="game-section">
@@ -82,7 +33,6 @@ const App = () => {
         </div>
 
         <div className="deshboard-section">
-          {/* Tab Navigation for Mobile/Tablet */}
           <div className="tab-container">
             <div
               className={`tab ${activeTab === "dashboard" ? "active" : ""}`}
@@ -97,7 +47,7 @@ const App = () => {
               Lucky Player
             </div>
           </div>
-          {/* Tab Content */}
+
           <div
             className={`tab-content ${
               activeTab === "dashboard" ? "active" : ""

@@ -4,11 +4,13 @@ import "../Deshboard_1.css";
 import { image } from "../../assets/image";
 import { FaPlus } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
+import "../MaxResetEdit/MaxReset";
 import { HiOutlineMinus } from "react-icons/hi";
+import EditButton from "../MaxResetEdit/Edit_button/Edit_button";
 
 const Main_button = ({ betValue }) => {
   const [value, setValue] = useState(betValue); // Initialize state with betValue
-  const buttonValues = [100, 500, 1000, 2000]; // Values of the buttons
+  const buttonValues = [100, 500, 1000, 2000];
 
   useEffect(() => {
     setValue(betValue); // Update state whenever betValue prop changes
@@ -41,6 +43,9 @@ const Main_button = ({ betValue }) => {
     if (event.key === " ") {
       setValue(""); // Clear the input value when the Space key is pressed
     }
+  };
+  const resetValue = () => {
+    setValue(betValue);
   };
 
   return (

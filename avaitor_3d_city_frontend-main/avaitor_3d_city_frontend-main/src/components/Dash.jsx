@@ -5,7 +5,11 @@ import RangeInfo from "../components/RangeAuto2/RangeInfo";
 import Main_button from "./buttonDesh/Main_button";
 import { image } from "../assets/image";
 import MaxReset from "./MaxResetEdit/MaxReset";
+import EditButton from "./MaxResetEdit/Edit_button/Edit_button";
 
+//
+
+//
 const Dash = (props) => {
   const [isNextBet, setIsNextBet] = useState(true);
   const [show, setShow] = useState(false);
@@ -115,7 +119,7 @@ const Dash = (props) => {
               />
               <span className="slider round"></span>
             </label>
-            <p>Auto Bet 2</p>
+            <p>Auto Cashout</p>
           </div>
           {autoCashOne && <RangeInfo />}
         </div>
